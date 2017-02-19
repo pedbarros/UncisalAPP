@@ -1,0 +1,3011 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".FormAlunosActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize" />
+
+    <TextView
+        android:id="@+id/txtDados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/Titulo"
+        android:layout_centerHorizontal="true"
+        android:background="#f0d90c"
+        android:padding="5dp"
+        android:text=""
+        android:textColor="#ad3030"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtGlossario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Titulo"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="#f0d90c"
+        android:padding="3dp"
+        android:text="Clique aqui para ver o glossário"
+        android:textColor="#ad3030"
+        android:textSize="14dp"
+        android:onClick="verGlossario"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/layout16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Existe um documento em que conste a Missão e o Plano de Desenvolvimento Institucional?-->
+            <TextView
+                android:id="@+id/perg1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="1 - Existe um documento em que conste a Missão e o Plano de Desenvolvimento Institucional?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg1_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Não" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Não sei opinar" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/layoutRgPerg1_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Caso afirmativo, é divulgado e você tem conhecimento:"
+                    android:textColor="@color/preto" />
+
+                <RadioGroup
+                    android:id="@+id/rgPerg1_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignBottom="@+id/textView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/rb1resp1"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rb1Perg1_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="É divulgado, mas não acessei." />
+
+                    <RadioButton
+                        android:id="@+id/rb2Perg1_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="É divulgado e tenho conhecimento." />
+
+                    <RadioButton
+                        android:id="@+id/rb3Perg1_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Não é divulgado" />
+
+                    <RadioButton
+                        android:id="@+id/rb4Perg1_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Não Sei Opinar" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <!--Como você avalia a política institucional no que diz respeito a:-->
+            <TextView
+                android:id="@+id/perg2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="2 - Como você avalia a política institucional no que diz respeito a:"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Ensino"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg2_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Pesquisa"
+                android:textColor="@color/preto" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg2_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Extensão"
+                android:textColor="@color/preto" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg2_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+
+            </RadioGroup>
+
+
+            <!--Você considera que a Interdisciplinaridade é praticada na UNCISAL?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="3 - Você considera que a Interdisciplinaridade é praticada na UNCISAL?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Entre os cursos"
+                android:textColor="@color/preto" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg3_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim, mas insuficiente" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Entre as disciplina e módulos do seu curso"
+                android:textColor="@color/preto" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg3_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim, mas insuficiente" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+            </RadioGroup>
+
+            <!--O curso incentiva a pesquisa e produção científica?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="4 - O curso incentiva a pesquisa e produção científica?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim" />
+
+            </RadioGroup>
+
+
+            <!--A UNCISAL oferta:-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="5 - A UNCISAL oferta:"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Bolsa-permanência"
+                android:textColor="@color/preto" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg5_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim, mas em quantidade insuficiente" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Bolsa-monitoria"
+                android:textColor="@color/preto" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg5_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim, mas em quantidade insuficiente" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Bolsa-indigena"
+                android:textColor="@color/preto" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg5_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim, mas em quantidade insuficiente" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Bolsa de Iniciação Cientifíca"
+                android:textColor="@color/preto" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg5_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg5_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg5_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg5_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim, mas em quantidade insuficiente" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg5_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+            </RadioGroup>
+
+
+            <!--Qual o seu conhecimento quanto à prática da responsabilidade social pela Uncisal nos seguintes aspectos:-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="6 - Qual o seu conhecimento quanto à prática da responsabilidade social pela Uncisal nos seguintes aspectos:"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="inclusão social"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg6_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+
+                <RadioButton
+                    android:id="@+id/rb3Perg6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não tenho conhecimento" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="O desenvolvimento Econômico"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg6_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+
+                <RadioButton
+                    android:id="@+id/rb3Perg6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não tenho conhecimento" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Melhoria da qualidade de vida"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg6_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg6_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg6_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+
+                <RadioButton
+                    android:id="@+id/rb3Perg6_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg6_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg6_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não tenho conhecimento" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Infraestrutura urbana/local"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg6_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg6_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg6_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+
+                <RadioButton
+                    android:id="@+id/rb3Perg6_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg6_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg6_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não tenho conhecimento" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Inovação social"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg6_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg6_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg6_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+
+                <RadioButton
+                    android:id="@+id/rb3Perg6_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg6_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg6_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não tenho conhecimento" />
+
+            </RadioGroup>
+
+            <!--Como você avalia a comunicação da Uncisal com o público externo?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="7- Como você avalia a comunicação da Uncisal com o público externo?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb6Perg7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não existe" />
+
+            </RadioGroup>
+
+
+            <!--Como você avalia a transparência das ações na Uncisal.-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="8 - Como você avalia a transparência das ações na Uncisal."
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb6Perg8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não existe" />
+            </RadioGroup>
+
+
+            <!--Você tem conhecimento dos órgãos de gestão e colegiados da Uncisal?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="9 - Você tem conhecimento dos órgãos de gestão e colegiados da Uncisal?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não" />
+            </RadioGroup>
+
+            <!--Como você considera a representatividade dos discentes nos órgãos colegiados e de gestão?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="10 - Como você considera a representatividade dos discentes nos órgãos colegiados e de gestão?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei Opinar" />
+            </RadioGroup>
+
+
+            <!--Como você considera a atuação dos representantes discentes nos órgãos colegiados e de gestão?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="11 - Como você considera a atuação dos representantes discentes nos órgãos colegiados e de gestão?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei Opinar" />
+            </RadioGroup>
+
+
+            <!--Como você avalia:-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="12 - Como você avalia:"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Os espaços de convivência e lazer"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg12_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg12_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg12_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+
+                <RadioButton
+                    android:id="@+id/rb3Perg12_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg12_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg12_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Existem" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="As condições das salas de aula"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg12_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg12_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg12_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+
+                <RadioButton
+                    android:id="@+id/rb3Perg12_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg12_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg12_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Existem" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Os equipamentos de mídia disponíveis nas salas de aula"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg12_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg12_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg12_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+
+                <RadioButton
+                    android:id="@+id/rb3Perg12_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg12_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg12_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Existe" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="As cadeiras disponíveis nas salas de aula:"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg12_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg12_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg12_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+
+                <RadioButton
+                    android:id="@+id/rb3Perg12_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg12_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg12_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Existe" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="O espaço físico para refeições:"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg12_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg12_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg12_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+
+                <RadioButton
+                    android:id="@+id/rb3Perg12_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg12_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg12_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Existe" />
+
+            </RadioGroup>
+
+
+            <!--Como você avalia a biblioteca em relação a:-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="13 - Como você avalia a biblioteca em relação a:"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="a. Acervo Físico"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg13_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Insuficiente" />
+
+                <RadioButton
+                    android:id="@+id/rb6Perg13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="b. Acervo Virtual"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg13_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg13_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg13_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg13_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg13_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg13_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Insuficiente" />
+
+                <RadioButton
+                    android:id="@+id/rb6Perg13_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="c. Espaço físico"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg13_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg13_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg13_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg13_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg13_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg13_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Insuficiente" />
+
+
+                <RadioButton
+                    android:id="@+id/rb6Perg13_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+
+            </RadioGroup>
+
+
+            <!--Como você classifica a acessibilidade da instituição no que concerne a:-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="14 - Como você classifica a acessibilidade da instituição no que concerne a:"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="a. Acessibilidade Digital"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg14_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não existe" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="b. Acessibilidade Arquitetônica"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg14_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg14_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg14_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg14_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg14_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg14_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não existe" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="c. Acessibilidade Atitudinal"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg14_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg14_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg14_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg14_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg14_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg14_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não existe" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="d. Acessibilidade Pedagógica"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg14_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg14_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg14_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg14_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg14_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg14_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não existe" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="e. Acessibilidade nas comunicações"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg14_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg14_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg14_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg14_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg14_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg14_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não existe" />
+
+            </RadioGroup>
+
+
+            <!--Como você avalia o laboratório de informática em relação à:-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="15 - Como você avalia o laboratório de informática em relação à:"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="a. Quantidade dos equipamentos"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg15_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg15_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg15_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg15_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg15_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg15_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Insuficiente" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="b. Qualidade dos equipamentos"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg15_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg15_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg15_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg15_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg15_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg15_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não sei opinar" />
+
+            </RadioGroup>
+
+
+            <!--Como você avalia o laboratório de ensino do seu curso?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="16 - Como você avalia o laboratório de ensino do seu curso?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Existe" />
+
+            </RadioGroup>
+
+
+            <!--Você está satisfeito com as regras de estacionamento?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="17 - Você está satisfeito com as regras de estacionamento?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg17"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não" />
+
+            </RadioGroup>
+
+
+            <!--Você está satisfeito com a disponibilidade de vagas no estacionamento?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="18 - Você está satisfeito com a disponibilidade de vagas no estacionamento?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg18"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Não" />
+
+            </RadioGroup>
+
+            <!--19.	Como você avalia o cumprimento das normativas relativas ao processo de avaliação da aprendizagem (Reavaliação, Provas, Notas por Unidades Programadas).-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="19 - Como você avalia o cumprimento das normativas relativas ao processo de avaliação da aprendizagem (Reavaliação, Provas, Notas por Unidades Programadas)."
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg19"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não tenho conhecimento" />
+
+            </RadioGroup>
+
+
+            <!--Você está satisfeito com as normativas relativas ao processo de avaliação da aprendizagem (Reavaliação, Provas, Notas por Unidades Programadas)?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="20 - Você está satisfeito com as normativas relativas ao processo de avaliação da aprendizagem (Reavaliação, Provas, Notas por Unidades Programadas)?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg20"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não" />
+
+            </RadioGroup>
+
+            <!--Como você avalia a relação:-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="21- Como você avalia a relação:"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Da coordenação do curso com os discentes"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg21_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg21_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg21_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg21_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg21_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg21_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Sei Opinar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Da pró-reitoria de ensino com os discentes"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg21_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg21_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg21_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg21_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg21_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg21_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Sei Opinar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Da pró-reitoria de Extensão com os discentes"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg21_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg21_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg21_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg21_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg21_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg21_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Sei Opinar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Da pró-reitoria de Gestão de Pessoas com os discentes"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg21_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg21_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg21_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg21_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg21_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg21_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Sei Opinar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Da pró-reitoria Estudantil com os discentes"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg21_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg21_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg21_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg21_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg21_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg21_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Sei Opinar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Da pró-reitoria de pesquisa e pós-graduação com os discentes"
+                android:textColor="@color/preto" />
+
+
+            <RadioGroup
+                android:id="@+id/rgPerg21_6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg21_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg21_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg21_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg21_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg21_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Não Sei Opinar" />
+
+            </RadioGroup>
+
+            <!--Para você há necessidade da oferta de uma Residência Universitária (moradia) pela Uncisal?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="22- Para você há necessidade da oferta de uma Residência Universitária (moradia) pela Uncisal?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg22"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Não" />
+
+            </RadioGroup>
+
+            <!--Na sua instituição existe uma ouvidoria?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="23- Na sua instituição existe uma ouvidoria?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg23"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Sim, funciona muito bem." />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Sim, mas não tem funcionalidade." />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Não, mas gostaria." />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Nunca ouvi falar." />
+
+            </RadioGroup>
+
+            <!--Como você avalia a sustentabilidade financeira da instituição?-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="24- Como você avalia a sustentabilidade financeira da instituição?"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg24"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Não Sei Opinar" />
+
+            </RadioGroup>
+
+            <!--Como você avalia os recursos demandados para as políticas de atendimento ao discente. -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="25 - Como você avalia os recursos demandados para as políticas de atendimento ao discente."
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgPerg25"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rb1resp1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb1Perg25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Ótimo" />
+
+                <RadioButton
+                    android:id="@+id/rb2Perg25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Bom" />
+
+                <RadioButton
+                    android:id="@+id/rb3Perg25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Regular/precisa melhorar" />
+
+                <RadioButton
+                    android:id="@+id/rb4Perg25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Ruim/péssimo" />
+
+                <RadioButton
+                    android:id="@+id/rb5Perg25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="verificaClique"
+                    android:text="Não Sei Opinar" />
+
+            </RadioGroup>
+
+
+            <!-- O espaço abaixo é onde o aluno tem total liberdade de escrever algo que lhe deseja sobre as perguntas abordadas.-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="26 - O espaço abaixo é onde o aluno tem total liberdade de escrever algo que deseja sobre as perguntas abordadas"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt1Perg11"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|left"
+                android:inputType="textMultiLine|textCapSentences"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:text="Salvar Questionário"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</LinearLayout>
